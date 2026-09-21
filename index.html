@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="BIG BOT Backups is a private, owner-operated tool for encrypted backups to Google Drive.">
+  <title>BIG BOT Backups</title>
+  <style>
+    :root { color-scheme: light; font-family: system-ui, sans-serif; color: #172b3a; background: #f5f7f8; }
+    * { box-sizing: border-box; }
+    body { margin: 0; line-height: 1.7; }
+    main { max-width: 760px; margin: 0 auto; padding: 48px 24px 64px; }
+    nav { display: flex; flex-wrap: wrap; gap: 24px; margin-bottom: 48px; }
+    a { color: #075b75; text-underline-offset: 4px; }
+    a:hover { color: #123b4d; }
+    a:focus-visible { outline: 3px solid #008fbd; outline-offset: 5px; }
+    .label { color: #49616f; font-size: .8rem; font-weight: 650; letter-spacing: .08em; text-transform: uppercase; }
+    h1 { font-size: clamp(2rem, 7vw, 3rem); line-height: 1.15; letter-spacing: -.04em; margin: 12px 0 20px; }
+    h2 { font-size: 1.2rem; line-height: 1.4; margin: 32px 0 8px; }
+    p { margin: 0 0 16px; }
+    .lead { font-size: 1.2rem; }
+    .panel { margin: 28px 0; padding: 24px; background: white; border: 1px solid #cbd7dd; border-radius: 12px; }
+    .panel h2 { margin-top: 0; }
+    .panel p:last-child { margin-bottom: 0; }
+    code { font-size: .9em; overflow-wrap: anywhere; }
+    footer { border-top: 1px solid #cbd7dd; padding-top: 20px; margin-top: 40px; color: #49616f; font-size: .9rem; }
+    @media (max-width: 480px) { main { padding: 28px 20px 40px; } nav { margin-bottom: 32px; } .panel { padding: 20px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <nav aria-label="Main navigation">
+      <a href="index.html" aria-current="page">Overview</a>
+      <a href="privacy.html">Privacy policy</a>
+    </nav>
+    <header>
+      <p class="label">Private tool · Personal use</p>
+      <h1>BIG BOT Backups</h1>
+      <p class="lead">Encrypted recovery backups, stored in the owner's Google Drive.</p>
+    </header>
+    <p>BIG BOT Backups is a locally run backup tool operated by its owner for personal use. It is not a public service and does not offer accounts, subscriptions, or a sign-up form.</p>
+    <section class="panel" aria-labelledby="how-heading">
+      <h2 id="how-heading">What the tool does</h2>
+      <p>After the owner authorizes Google Drive access, the tool uses rclone crypt to encrypt recovery archives on the owner's computer before uploading them. It downloads a copy to check the contents and support recovery.</p>
+      <p>Each backup is written as a new snapshot. The backup routine does not overwrite or automatically delete earlier snapshots. The owner manages retention and deletion.</p>
+    </section>
+    <h2>Why Google Drive access is requested</h2>
+    <p>The tool requests the <code>https://www.googleapis.com/auth/drive.file</code> permission. Its backup workflow creates and accesses its own backup files and folders, reads their metadata, and checks available storage. It does not request unrestricted access to the owner's entire Drive.</p>
+    <h2>The owner stays in control</h2>
+    <p>Google authorization is completed in the owner's browser. Access can be reviewed or removed through <a href="https://myaccount.google.com/connections">Google Account connections</a>. Removing access stops future authorized Drive operations; it does not delete existing backups.</p>
+    <p>See the <a href="privacy.html">privacy policy</a> for data use, local credential protection, and deletion details.</p>
+    <h2>Contact and availability</h2>
+    <p>The operator and intended user are the same person. This informational site does not collect support requests or provide a public customer service. The owner manages the tool through their local installation and Google Account settings.</p>
+    <footer>
+      <p>This description covers the backup design. It does not confirm that an account is connected, a backup has succeeded, or recovery has been verified.</p>
+      <p>BIG BOT Backups is an independent personal project and is not a Google product.</p>
+    </footer>
+  </main>
+
+
+</body></html>
