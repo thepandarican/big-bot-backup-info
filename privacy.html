@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="How the personal BIG BOT Backups tool accesses, uses, protects, and retains Google Drive data.">
+  <title>Privacy policy · BIG BOT Backups</title>
+  <style>
+    :root { color-scheme: light; font-family: system-ui, sans-serif; color: #172b3a; background: #f5f7f8; }
+    * { box-sizing: border-box; }
+    body { margin: 0; line-height: 1.7; }
+    main { max-width: 760px; margin: 0 auto; padding: 48px 24px 64px; }
+    nav { display: flex; flex-wrap: wrap; gap: 24px; margin-bottom: 48px; }
+    a { color: #075b75; text-underline-offset: 4px; }
+    a:hover { color: #123b4d; }
+    a:focus-visible { outline: 3px solid #008fbd; outline-offset: 5px; }
+    .label { color: #49616f; font-size: .8rem; font-weight: 650; letter-spacing: .08em; text-transform: uppercase; }
+    h1 { font-size: clamp(2rem, 7vw, 3rem); line-height: 1.15; letter-spacing: -.04em; margin: 12px 0 20px; }
+    h2 { font-size: 1.2rem; line-height: 1.4; margin: 32px 0 8px; }
+    p { margin: 0 0 16px; }
+    code { font-size: .9em; overflow-wrap: anywhere; }
+    footer { border-top: 1px solid #cbd7dd; padding-top: 20px; margin-top: 40px; color: #49616f; font-size: .9rem; }
+    @media (max-width: 480px) { main { padding: 28px 20px 40px; } nav { margin-bottom: 32px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <nav aria-label="Main navigation">
+      <a href="index.html">Overview</a>
+      <a href="privacy.html" aria-current="page">Privacy policy</a>
+    </nav>
+    <header>
+      <p class="label">BIG BOT Backups · Personal use</p>
+      <h1>Privacy policy</h1>
+      <p>Prepared for setup review on September 21, 2026.</p>
+    </header>
+    <p>This policy describes BIG BOT Backups, a private backup tool run on its owner's computer. The owner is its sole intended user and operator. This site provides information only; it does not connect a Google Account or receive backup files.</p>
+    <h2>Google access and data used</h2>
+    <p>When connected by the owner, the tool requests <code>https://www.googleapis.com/auth/drive.file</code>. The backup workflow creates and accesses its own Drive files and folders. It uses their identifiers, names, sizes, timestamps, and available integrity information to upload, locate, download, and verify recovery snapshots. It also reads storage quota information to avoid exceeding available space.</p>
+    <p>The tool receives OAuth authorization tokens so it can perform these operations after consent. It does not request Gmail, Contacts, Calendar, or unrestricted Drive permissions. Google handles account sign-in; the tool does not receive the owner's Google password.</p>
+    <h2>Purpose and Limited Use</h2>
+    <p>Google user data is used only to provide the owner-authorized backup, verification, and recovery functions described on this site. BIG BOT Backups follows the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including its Limited Use requirements. Google user data is not sold, shared for advertising, used for profiling, or used to train general-purpose AI models.</p>
+    <h2>Storage and credential protection</h2>
+    <p>The implemented backup design encrypts archive contents and backup names locally with rclone crypt before transferring them to Google Drive over encrypted network connections. Google still processes account and service metadata, such as stored file sizes, timestamps, and network activity. The owner retains the encryption password separately for recovery.</p>
+    <p>OAuth tokens and backup encryption settings are stored in an encrypted rclone configuration on the owner's computer, with restricted Windows file permissions. The host setup stores the configuration-unlock password using Windows Data Protection API (DPAPI), bound to the Windows user and computer. These protections require completing the local setup; this policy does not assert that setup or a recovery test has already succeeded.</p>
+    <p>Local recovery files and verification records can contain decrypted backup data. The owner is responsible for securing the computer and any recovery copies. Credential files are excluded from the backup package.</p>
+    <h2>Sharing and service providers</h2>
+    <p>Encrypted snapshots are sent to the Google Drive account selected and authorized by the owner. The backup workflow does not publish snapshots, create public sharing links, or send Google user data to advertisers, data brokers, or an AI service. The owner can read their own recovered files.</p>
+    <p>Google operates the storage and authorization services under the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>. The information site may be hosted separately from the backup system; its hosting provider may process ordinary connection logs.</p>
+    <h2>Retention, deletion, and revocation</h2>
+    <p>Remote snapshots are retained until the owner deletes them or Google applies its account or storage policies. The backup routine creates separate snapshots without overwriting earlier ones and does not automatically delete remote backups. Reaching a configured storage or snapshot limit stops new backups instead of deleting older copies.</p>
+    <p>The owner can delete snapshots in Google Drive and manage its trash, remove local recovery files and verification records, and remove the local credential configuration. Local files remain until removed by the owner or the local system's explicitly configured cleanup. Deleting a remote snapshot does not remove downloaded local copies.</p>
+    <p>Access can be revoked in <a href="https://myaccount.google.com/connections">Google Account connections</a>. Revocation prevents future authorized Drive operations but does not erase existing Drive files, local copies, or records. Google provides <a href="https://support.google.com/accounts/answer/13533235">instructions for reviewing and removing app access</a>.</p>
+    <h2>This informational site</h2>
+    <p>The site's own code has no analytics, advertising, cookies, tracking scripts, forms, or external embedded resources. Following an external link takes the visitor to that provider's service and privacy practices. A hosting provider may log requests, including IP addresses and browser information.</p>
+    <h2>Contact and changes</h2>
+    <p>This is an owner-operated personal tool, not a service offered to the public. Its owner handles configuration, privacy decisions, and deletion through the local installation and Google Account. No public support inbox or third-party data collection channel is provided by this site.</p>
+    <p>If the tool's use of Google data changes, this policy and the local disclosures must be updated before the new use begins, and the owner must authorize any newly required access.</p>
+    <footer>
+      <p><a href="index.html">Return to BIG BOT Backups</a></p>
+      <p>This document describes the backup design and its data-handling rules. It is not evidence of completed configuration, successful backups, or a verified recovery.</p>
+    </footer>
+  </main>
+
+
+</body></html>
